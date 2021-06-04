@@ -1,36 +1,19 @@
-#include<stdio.h>
-int main()
-{
-    int t,n,i;
-    scanf("%d", &t);
-    int result, tmp;
+#include <stdio.h>
+
+int main() {
+	int t,n,p;
+	scanf("%d", &t);
     while(t--)
-    {   
-        int arr[10000];
-        arr[0] = 1;
-        int leng = 1;
+    {
         scanf("%d", &n);
-        while(n>0){
-            
-            for(i=0;i<leng;i++)
+        p=1;
+        while(n>0)
         {
-            result = arr[i] * n + tmp;
-            arr[i] = result%10;
-            tmp = result/10;
+            p = p * n;
+            n--;
         }
-        while(tmp>0)
-        {
-            arr[leng] = tmp%10;
-            leng++;
-            tmp = tmp/10;
-        }
-        n--;
-        }
-        for(i=leng-1;i>=0;i--)
-        {
-            printf("%d",arr[i]);
-        }
-        printf("\n");
+        printf("%d \n", p);
     }
-    return 0;
+	return 0;
 }
+
